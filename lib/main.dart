@@ -75,6 +75,7 @@ class _HomeState extends State<Home> {
                   dolar = snapshot.data["results"]["currencies"]["USD"]["buy"];
                   euro = snapshot.data["results"]["currencies"]["EUR"]["buy"];
                   return SingleChildScrollView(
+                    padding: EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
@@ -83,6 +84,7 @@ class _HomeState extends State<Home> {
                           size: 150.0,
                           color: Colors.amber,
                         ),
+                        Divider(),
                         TextField(
                           decoration: InputDecoration(
                             labelText: "Reais",
@@ -94,7 +96,33 @@ class _HomeState extends State<Home> {
                             color: Colors.amber,
                             fontSize: 25.0,
                           ),
-                        )
+                        ),
+                        Divider(),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "BitCoins",
+                            labelStyle: TextStyle(color: Colors.amber),
+                            border: OutlineInputBorder(),
+                            prefixText: "B\$",
+                          ),
+                          style: TextStyle(
+                            color: Colors.amber,
+                            fontSize: 25.0,
+                          ),
+                        ),
+                        Divider(),
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: "Dolars",
+                            labelStyle: TextStyle(color: Colors.amber),
+                            border: OutlineInputBorder(),
+                            prefixText: "\$",
+                          ),
+                          style: TextStyle(
+                            color: Colors.amber,
+                            fontSize: 25.0,
+                          ),
+                        ),
                       ],
                     ),
                   );
