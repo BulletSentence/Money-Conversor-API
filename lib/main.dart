@@ -7,7 +7,7 @@ const request = "https://api.hgbrasil.com/finance?format=json&key=548c1152";
 
 void main() async {
   http.Response response = await http.get(request);
-  json.decode(response.body);
+  print(json.decode(response.body)["results"]);
   runApp(
     MaterialApp(home: Container()),
   );
