@@ -85,44 +85,11 @@ class _HomeState extends State<Home> {
                           color: Colors.amber,
                         ),
                         Divider(),
-                        TextField(
-                          decoration: InputDecoration(
-                            labelText: "Reais",
-                            labelStyle: TextStyle(color: Colors.amber),
-                            border: OutlineInputBorder(),
-                            prefixText: "R\$",
-                          ),
-                          style: TextStyle(
-                            color: Colors.amber,
-                            fontSize: 25.0,
-                          ),
-                        ),
+                        buildTextField("Reais", "R\$ "),
                         Divider(),
-                        TextField(
-                          decoration: InputDecoration(
-                            labelText: "BitCoins",
-                            labelStyle: TextStyle(color: Colors.amber),
-                            border: OutlineInputBorder(),
-                            prefixText: "B\$",
-                          ),
-                          style: TextStyle(
-                            color: Colors.amber,
-                            fontSize: 25.0,
-                          ),
-                        ),
+                        buildTextField("Bitcoins", "BTC "),
                         Divider(),
-                        TextField(
-                          decoration: InputDecoration(
-                            labelText: "Dolars",
-                            labelStyle: TextStyle(color: Colors.amber),
-                            border: OutlineInputBorder(),
-                            prefixText: "\$",
-                          ),
-                          style: TextStyle(
-                            color: Colors.amber,
-                            fontSize: 25.0,
-                          ),
-                        ),
+                        buildTextField("Dolars", "US\$ "),
                       ],
                     ),
                   );
@@ -131,4 +98,19 @@ class _HomeState extends State<Home> {
           }),
     );
   }
+}
+
+Widget buildTextField (String label, String prefix) {
+  return TextField(
+    decoration: InputDecoration(
+      labelText: label,
+      labelStyle: TextStyle(color: Colors.amber),
+      border: OutlineInputBorder(),
+      prefixText: prefix,
+    ),
+    style: TextStyle(
+      color: Colors.amber,
+      fontSize: 25.0,
+    ),
+  );
 }
